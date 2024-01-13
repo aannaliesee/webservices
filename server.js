@@ -1,10 +1,8 @@
 const express = require('express');
 const app = express();
+const homeRoute = require('./routes/home');
 
-app.get('/', (req, res) => {
-    const name = "Annaliese Mits"; // Replace with the name you want to display
-    res.send(`Hello, ${name}!`);
-});
+app.get('/', homeRoute);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
